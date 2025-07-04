@@ -1,0 +1,56 @@
+# Python cache and artifacts
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Windows batch scripts
+*.bat
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Jupyter Notebooks
+*.ipynb
+
+# Model weights & large binaries
+*.pt
+*.pth
+
+# Images and temporary files
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.gif
+*.tif
+*.tiff
+*.webp
+
+# Streamlit specific
+.streamlit/
+
+# PDF or reports
+*.pdf
+
+# OS / Editor / IDE files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Git folder
+.git/
+
+#  Ignore local yolov5 folder as not used directly
+yolov5/
