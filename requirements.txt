@@ -1,6 +1,6 @@
-streamlit>=1.33.0
-ultralytics>=8.2.34
-Pillow>=11.0.0
-fpdf>=1.7.2
-numpy>=1.23.5
-torch>=2.0.0
+streamlit
+ultralytics==8.1.3
+opencv-python-headless
+Pillow
+numpy
+fpdf
