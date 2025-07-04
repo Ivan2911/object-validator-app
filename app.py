@@ -8,7 +8,7 @@ import datetime
 import io
 import tempfile
 import torch
-from ultralytics.nn.tasks import DetectionModel
+
 
 # Setup + Model Loading
 # --------------------------------------------
@@ -17,7 +17,6 @@ from ultralytics.nn.tasks import DetectionModel
 def load_model():
     # Just load the weights – no safe-globals needed on torch 2.5.1
     return YOLO("models/yolov5s.pt")          # or "models/yolov5su.pt"
-
 
 
 model = load_model()
