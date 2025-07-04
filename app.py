@@ -19,14 +19,15 @@ from torch.serialization import add_safe_globals
 # Load model once at the top
 @st.cache_resource
 def load_model():
-    import torch
     from torch.serialization import add_safe_globals
     from ultralytics.nn.tasks import DetectionModel
 
-    # 👇 Tell PyTorch it's safe to unpickle this model class
+    # ✅ Tell PyTorch it's safe to load this model
     add_safe_globals([DetectionModel])
 
+    # ✅ Load your local model (yolov5s.pt) stored in /models
     return YOLO("models/yolov5s.pt")
+
 
 
 
