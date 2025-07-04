@@ -90,8 +90,10 @@ if uploaded_file:
         st.error("❌ The uploaded file is not a valid image. Please upload a JPG or PNG.")
         st.stop()
 
-    # Run object detection
-    results = model(image)[0]
+    # Run object detection with spinner
+    with st.spinner("🔍 Detecting objects... Please wait..."):
+        results = model(image)[0]
+
     detected_labels = []
     violations = []
 
