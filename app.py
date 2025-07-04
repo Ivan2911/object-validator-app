@@ -9,19 +9,18 @@ import io
 import tempfile
 import torch
 from ultralytics.nn.tasks import DetectionModel
+from torch.serialization import add_safe_globals
 
 
 
 
 # Setup + Model Loading
+add_safe_globals([DetectionModel])
 # --------------------------------------------
 # Load model once at the top
 @st.cache_resource
 def load_model():
-    import torch
-    from ultralytics.nn.tasks import DetectionModel
-    torch.serialization.add_safe_globals({'ultralytics.nn.tasks.DetectionModel': DetectionModel})
-
+    add_safe_globals([DetectionModel])
     return YOLO("models/yolov5s.pt")
 
 
