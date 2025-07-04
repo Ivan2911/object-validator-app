@@ -13,9 +13,7 @@ import tempfile
 # Load model once at the top
 @st.cache_resource
 def load_model():
-    return YOLO("https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5s.pt")
-
-
+    return YOLO("models/yolov5s.pt")
 
 model = load_model()
 CLASSES = model.names
