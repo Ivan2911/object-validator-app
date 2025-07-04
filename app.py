@@ -13,7 +13,8 @@ import tempfile
 # Load model once at the top
 @st.cache_resource
 def load_model():
-    return YOLO("yolov5s.pt")
+    return YOLO("yolov5s")  # Automatically downloads from Ultralytics hub
+
 
 model = load_model()
 CLASSES = model.names
