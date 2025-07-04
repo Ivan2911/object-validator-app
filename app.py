@@ -9,25 +9,14 @@ import io
 import tempfile
 import torch
 from ultralytics.nn.tasks import DetectionModel
-from torch.serialization import add_safe_globals
-
-
-
 
 # Setup + Model Loading
 # --------------------------------------------
 # Load model once at the top
 @st.cache_resource
 def load_model():
-    from torch.serialization import add_safe_globals
-    from ultralytics.nn.tasks import DetectionModel
-
-    # ✅ Tell PyTorch it's safe to load this model
-    add_safe_globals([DetectionModel])
-
-    # ✅ Load your local model (yolov5s.pt) stored in /models
-    return YOLO("models/yolov5s.pt")
-
+    # Just load the weights – no safe-globals needed on torch 2.5.1
+    return YOLO("models/yolov5s.pt")          # or "models/yolov5su.pt"
 
 
 
