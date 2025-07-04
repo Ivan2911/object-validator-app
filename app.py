@@ -7,13 +7,23 @@ from fpdf import FPDF
 import datetime
 import io
 import tempfile
+import torch
+from ultralytics.nn.tasks import DetectionModel
+
+
+
 
 # Setup + Model Loading
 # --------------------------------------------
 # Load model once at the top
 @st.cache_resource
 def load_model():
+    import torch
+    from ultralytics.nn.tasks import DetectionModel
+    torch.serialization.add_safe_globals({'ultralytics.nn.tasks.DetectionModel': DetectionModel})
+
     return YOLO("models/yolov5s.pt")
+
 
 model = load_model()
 CLASSES = model.names
