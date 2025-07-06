@@ -16,7 +16,7 @@ import torch
 @st.cache_resource
 def load_model():
     # Just load the weights – no safe-globals needed on torch 2.5.1
-    return YOLO("models/yolov5s.pt")          # or "models/yolov5su.pt"
+    return YOLO("models/yolov5su.pt")          # or "models/yolov5su.pt"
 
 
 model = load_model()
